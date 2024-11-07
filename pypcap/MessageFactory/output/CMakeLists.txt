@@ -11,6 +11,8 @@ find_package(pybind11 REQUIRED)
 # Specify where PcapPlusPlus headers and libraries are located
 include_directories(/usr/local/include/pcapplusplus)
 include_directories(./include)
+include_directories(${Python3_INCLUDE_DIRS})
+
 
 # Specify the source files (bindings and EthernetMessage implementation)
 set(SOURCE_FILES
@@ -31,6 +33,16 @@ set_target_properties(pypcap PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
 )
 
+if(UNIX)
+    # Create a duplicate target for .dll output by renaming or aliasing it
+    add_library(pypcap_dll SHARED ${SOURCE_FILES})
+    target_link_libraries(pypcap_dll PRIVATE Pcap++ Packet++ Common++ pcap pthread)
+
+    set_target_properties(pypcap_dll PROPERTIES
+        LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+        SUFFIX ".dll"  # Force .dll suffix for this shared library
+    )
+endif()
 # Add an executable (to run a C++ executable in Linux)
 add_executable(pypcap_executable main.cpp 
     /home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp

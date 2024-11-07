@@ -33,7 +33,10 @@ namespace messagefactory{
     }
     std::vector<uint8_t> DhcpMessage::getBytes()
     {
-        return std::vector<uint8_t>(DhcpLayer::getData(), DhcpLayer::getData()+DhcpLayer::getDataLen());
+        return std::vector<uint8_t>(
+            m_packet.get()->getLayerOfType(pcpp::DHCP)->getData()
+            , m_packet.get()->getLayerOfType(pcpp::DHCP)->getData() + m_packet.get()->getLayerOfType(pcpp::DHCP)->getDataLen()
+            );
     }
     void DhcpMessage::addOption(int option, std::vector<uint8_t> data)
     {
@@ -53,6 +56,38 @@ namespace messagefactory{
     }
     bool DhcpMessage::hasOption(int optionValue)
     {
-        return (getOptionData(static_cast<pcpp::DhcpOptionTypes>(optionValue)).isNotNull());
+        return (pcpp::DhcpLayer::getOptionData(static_cast<pcpp::DhcpOptionTypes>(optionValue)).isNotNull());
+    }
+    std::vector<uint8_t> DhcpMessage::getOptionData(int optionValue)
+    {
+        if (this->hasOption(optionValue))
+        {
+            uint8_t* data = (pcpp::DhcpLayer::getOptionData(static_cast<pcpp::DhcpOptionTypes>(optionValue)).getValue());
+            size_t dataSize = (pcpp::DhcpLayer::getOptionData(static_cast<pcpp::DhcpOptionTypes>(optionValue)).getDataSize());
+            myVec.assign(data, data+dataSize);
+        }
+        else
+        {
+            PCPP_LOG_ERROR("Message Has no option " + std::to_string(optionValue));
+        }
+        return myVec;
+    }
+    void DhcpMessage::printPayloadAsByteStream()
+    {
+        std::ostringstream os;
+        const uint8_t *_bytearray = m_packet.get()->getLayerOfType(pcpp::DHCP)->getData();
+        const int _size = m_packet.get()->getLayerOfType(pcpp::DHCP)->getDataLen();
+        
+        std::cout << "[";
+        for (int i = 0; i < _size; i++)
+        {
+            os << "0x" << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(_bytearray[i]);
+            if (i < _size - 1)
+            {
+                os << ",";
+            }
+        }
+        os << "]";
+        std::cout << os.str() << std::endl;
     }
 }

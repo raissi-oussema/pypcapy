@@ -7,7 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.o.d"
   "CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.o"
   "CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.o.d"
-  "pypcap.cpython-312-x86_64-linux-gnu.so"
+  "pypcap.cpython-311-x86_64-linux-gnu.so"
   "pypcap.pdb"
 )
 

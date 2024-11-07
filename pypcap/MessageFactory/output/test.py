@@ -36,12 +36,16 @@ dhcp_msg.dhcp_header.transaction_id = 0x23242526
 dhcp_msg.ipv4_header.time_to_live = 64
 dhcp_msg.message_type  = DhcpMessageType.DHCP_INFORM
 dhcp_msg.add_option(61, opDataRequestedIp)
+print(dhcp_msg.get_option_data(61))
+print(dhcp_msg.get_option_data(30))
 print(dhcp_msg.has_option(61))
 print(dhcp_msg.has_option(55))
 print(dhcp_msg.message_type)
 
 print(dhcp_msg.ipv4_header.source_ip_address)
 print(dhcp_msg.ipv4_header.destination_ip_address)
+dhcp_msg.print_packet_as_bytes_stream()
+dhcp_msg.print_payload_as_bytes_stream()
 print("before send: ", list(dhcp_msg.get_bytes()))
 dhcp_msg.send("wlan0")
 print("after send: ", list(dhcp_msg.get_bytes()))

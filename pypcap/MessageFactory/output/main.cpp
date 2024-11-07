@@ -80,7 +80,12 @@ int main()
     std::cout << dhcp_msg.hasOption(57) << std::endl;
     std::cout << dhcp_msg.hasOption(255) << std::endl;
     std::cout << dhcp_msg.hasOption(100) << std::endl;
-
+    std::vector<uint8_t> record = dhcp_msg.getOptionData(30) ;
+    dhcp_msg.printRawPacketAsByteStream();
+    for (int i = 0; i < record.size(); i++)
+    {
+        std::cout << unsigned(record[i]) << std::endl;
+    }
     // Add Parameter Request List option (Example: requesting subnet mask and router)
 
 

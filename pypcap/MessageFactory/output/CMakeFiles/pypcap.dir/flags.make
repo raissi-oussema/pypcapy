@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dpypcap_EXPORTS
 
-CXX_INCLUDES = -I/usr/local/include/pcapplusplus -I/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/output/./include -isystem /usr/include/python3.12
+CXX_INCLUDES = -I/usr/local/include/pcapplusplus -I/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/output/./include -isystem /usr/include/python3.11
 
 CXX_FLAGS = -g -O0 -std=gnu++14 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects
 

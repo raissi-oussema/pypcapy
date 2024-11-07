@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/pcapplusplus -I/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/output/./include
+CXX_INCLUDES = -I/usr/local/include/pcapplusplus -I/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/output/./include -I/usr/include/python3.11
 
 CXX_FLAGS = -g -O0 -std=gnu++14
 

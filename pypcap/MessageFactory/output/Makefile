@@ -130,6 +130,19 @@ pypcap/fast:
 .PHONY : pypcap/fast
 
 #=============================================================================
+# Target rules for targets named pypcap_dll
+
+# Build rule for target.
+pypcap_dll: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pypcap_dll
+.PHONY : pypcap_dll
+
+# fast build rule for target.
+pypcap_dll/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/build
+.PHONY : pypcap_dll/fast
+
+#=============================================================================
 # Target rules for targets named pypcap_executable
 
 # Build rule for target.
@@ -148,6 +161,7 @@ bindings.o: bindings.cpp.o
 # target to build an object file
 bindings.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/bindings.cpp.o
 .PHONY : bindings.cpp.o
 
 bindings.i: bindings.cpp.i
@@ -156,6 +170,7 @@ bindings.i: bindings.cpp.i
 # target to preprocess a source file
 bindings.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/bindings.cpp.i
 .PHONY : bindings.cpp.i
 
 bindings.s: bindings.cpp.s
@@ -164,6 +179,7 @@ bindings.s: bindings.cpp.s
 # target to generate assembly for a file
 bindings.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/bindings.cpp.s
 .PHONY : bindings.cpp.s
 
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.o: home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.o
@@ -172,6 +188,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.o: hom
 # target to build an object file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.o
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.o
 
@@ -181,6 +198,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.i: hom
 # target to preprocess a source file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.i
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.i
 
@@ -190,6 +208,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.s: hom
 # target to generate assembly for a file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.s
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/DhcpMessage.cpp.s
 
@@ -199,6 +218,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.o:
 # target to build an object file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.o
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.o
 
@@ -208,6 +228,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.i:
 # target to preprocess a source file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.i
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.i
 
@@ -217,6 +238,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.s:
 # target to generate assembly for a file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.s
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/EthernetMessage.cpp.s
 
@@ -226,6 +248,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.o: h
 # target to build an object file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.o
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.o
 
@@ -235,6 +258,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.i: h
 # target to preprocess a source file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.i
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.i
 
@@ -244,6 +268,7 @@ home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.s: h
 # target to generate assembly for a file
 home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap.dir/build.make CMakeFiles/pypcap.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_dll.dir/build.make CMakeFiles/pypcap_dll.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pypcap_executable.dir/build.make CMakeFiles/pypcap_executable.dir/home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.s
 .PHONY : home/oussema/Desktop/build/MyFolder/pypcap/MessageFactory/src/IMessageBasic.cpp.s
 
@@ -280,6 +305,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... pypcap"
+	@echo "... pypcap_dll"
 	@echo "... pypcap_executable"
 	@echo "... bindings.o"
 	@echo "... bindings.i"

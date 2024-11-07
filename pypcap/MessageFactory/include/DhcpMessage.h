@@ -22,11 +22,14 @@ public:
     std::vector<uint8_t> getBytes();
     void addOption(int option, std::vector<uint8_t> optionData);
     bool hasOption(int optionType);
-    
+    std::vector<uint8_t> getOptionData(int optionValue);
+    void printPayloadAsByteStream();
+
     ~DhcpMessage() noexcept {};
     
 private:
     void setUdpLayer();
+    std::vector<uint8_t> myVec;
     std::unique_ptr<pcpp::UdpLayer> m_udpLayer;
 };
 

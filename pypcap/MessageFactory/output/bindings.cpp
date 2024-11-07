@@ -196,6 +196,9 @@ PYBIND11_MODULE(pypcap, m) {
         .def("has_option", 
         [](messagefactory::DhcpMessage &self, int option){ return self.hasOption(option);})
         
+        .def("get_option_data", 
+        [](messagefactory::DhcpMessage &self, int option){ return self.getOptionData(option);})
+        
         .def("set_all_bytes", [](messagefactory::DhcpMessage &self, py::object data) {
             py::buffer_info bufInfo;
             try {
@@ -208,6 +211,12 @@ PYBIND11_MODULE(pypcap, m) {
             }
             self.setAllBytes(static_cast<uint8_t*>(bufInfo.ptr), bufInfo.size);
         })
+        .def("print_packet_as_bytes_stream", 
+        [](messagefactory::DhcpMessage &self){ self.printRawPacketAsByteStream();})
+        
+        .def("print_payload_as_bytes_stream", 
+        [](messagefactory::DhcpMessage &self){ self.printPayloadAsByteStream();})
+        
         .def("get_all_bytes", [](messagefactory::DhcpMessage& self) -> pybind11::bytes {
             const uint8_t* data = self.getAllBytes().data();
             int size = self.getAllBytes().size();

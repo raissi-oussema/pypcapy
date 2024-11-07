@@ -131,7 +131,7 @@ namespace messagefactory
         std::cout << "[";
         for (int i = 0; i < _size; i++)
         {
-            os << static_cast<int>(_bytearray[i]);
+            os << "0x" << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(_bytearray[i]);
             if (i < _size - 1)
             {
                 os << ",";
